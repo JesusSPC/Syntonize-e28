@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { Pages } from './pages/index';
 
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { NavbarMenuComponent } from './components/shared/navbar/navbar-menu/navbar-menu.component';
+import { NavbarButtonComponent } from './components/shared/navbar/navbar-button/navbar-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...Pages,
-    NavbarComponent
+    NavbarComponent,
+    NavbarMenuComponent,
+    NavbarButtonComponent
   ],
   imports: [
     BrowserModule,

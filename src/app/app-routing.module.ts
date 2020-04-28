@@ -4,10 +4,11 @@ import { HomePage, BeersPage, AboutPage } from './pages';
 
 
 const routes: Routes = [
+  { path: 'home', component: HomePage },
+  { path: 'beers', component: BeersPage },
+  { path: 'about', component: AboutPage },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '/home', component: HomePage },
-  { path: '/beers', component: BeersPage },
-  { path: '/about', component: AboutPage }
+  { path: '**', component: HomePage }
 ];
 
 @NgModule({
