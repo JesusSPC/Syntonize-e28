@@ -1,3 +1,5 @@
-<navbar></navbar>
+<navbar-button (clickBurger)="toggleMenu()"></navbar-button>
+
+<sidebar [isHidden]="isHidden" (clickLink)="toggleMenu()"></sidebar>
 
 <router-outlet></router-outlet>

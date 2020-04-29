@@ -6,17 +6,15 @@ import { AppComponent } from './app.component';
 
 import { Pages } from './pages/index';
 
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { NavbarMenuComponent } from './components/shared/navbar/navbar-menu/navbar-menu.component';
-import { NavbarButtonComponent } from './components/shared/navbar/navbar-button/navbar-button.component';
+import { NavbarButtonComponent } from './components/shared/navbar/navbar-button.component';
+import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...Pages,
-    NavbarComponent,
-    NavbarMenuComponent,
     NavbarButtonComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

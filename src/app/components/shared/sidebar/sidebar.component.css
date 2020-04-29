@@ -1,0 +1,38 @@
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15rem;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: left, 1s;
+  border-right: 0.2rem solid black;
+  border-bottom: 0.2rem solid black;
+  z-index: 10;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 3rem 3rem 0 0;
+}
+
+.nav-menu li {
+  padding-bottom: 3rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.nav-menu .active {
+  color: red;
+}
+
+.hidden {
+  left: -30rem;
+}
