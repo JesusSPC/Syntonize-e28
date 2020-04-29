@@ -1,16 +1,8 @@
-<!-- <ul>
-  <li>
-   <a routerLink="/home">Home</a>
-  </li>
-  <li>
-    <a routerLink="/beers">Beers</a>
-   </li>
-   <li>
-    <a routerLink="/about">About</a>
-   </li>
-</ul> -->
-
 <div class="nav-container">
-  <navbar-menu *ngIf="!isHidden"></navbar-menu>
-  <navbar-button (clickBurger)="toggleMenu()"></navbar-button>
+  <div class="nav-button-container">
+    <navbar-button (clickBurger)="toggleMenu()"></navbar-button>
+  </div>
+  <div #menu class="nav-menu-container">
+    <navbar-menu (clickLink)="hideMenu()"></navbar-menu>
+  </div>
 </div>

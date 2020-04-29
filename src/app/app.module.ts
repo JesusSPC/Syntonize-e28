@@ -16,7 +16,7 @@ import { NavbarButtonComponent } from './components/shared/navbar/navbar-button/
     ...Pages,
     NavbarComponent,
     NavbarMenuComponent,
-    NavbarButtonComponent
+    NavbarButtonComponent,
   ],
   imports: [
     BrowserModule,
