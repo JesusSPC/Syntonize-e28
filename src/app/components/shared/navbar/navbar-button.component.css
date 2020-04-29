@@ -6,6 +6,7 @@
   width: 6rem;
   padding: 1rem;
   border-radius: 0.5rem;
+  box-shadow: -8px 6px 10px 0px rgba(207,207,207,1);
   background-color: orange;
   margin: 1rem;
   z-index: 1;
