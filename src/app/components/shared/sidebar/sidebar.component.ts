@@ -1,11 +1,11 @@
-import { Component, OnInit, Output, EventEmitter, Input, HostListener, ElementRef } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
   @Input() isHidden: boolean;
   @Output() clickLink: EventEmitter<any> = new EventEmitter();
 
@@ -15,28 +15,7 @@ export class SidebarComponent implements OnInit {
     { path: '/about', name: 'ABOUT' }
   ];
 
-  constructor(
-    private _eRef: ElementRef
-  ) { }
-
-  ngOnInit() {
-  }
-
-  @HostListener('document:click', ['$event'])
-  clickout(event) {
-    const mobileWidth = 480;
-    if (window.innerWidth < mobileWidth) {
-      if (!this._eRef.nativeElement.contains(event.target)) {
-        // this.onClick();
-      }
-    }
-  }
-
-  // @HostListener('mouseleave', ['$event'])
-  // @HostListener('mousedown', ['$event'])
-  // clickout(event) {
-  //   console.log('FUERA')
-  // }
+  constructor() { }
 
   onClick() {
     this.clickLink.emit();
