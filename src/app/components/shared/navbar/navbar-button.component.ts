@@ -7,9 +7,6 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class NavbarButtonComponent {
 
-  @Output() clickBurger: EventEmitter<any> = new EventEmitter();
+  @Output() clickBurger = new EventEmitter<any>();
 
-  clickMenu() {
-    this.clickBurger.emit();
-  }
 }

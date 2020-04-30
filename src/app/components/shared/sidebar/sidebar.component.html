@@ -1,13 +1,4 @@
-<div [class.hidden]="isHidden" class="nav-menu">
-  <ul>
-    <li *ngFor="let link of links">
-      <a
-        (click)="onClick()"
-        [routerLink]="link?.path"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}"
-      >{{link?.name}}</a>
-    </li>
-  </ul>
-</div>
-<div closeSidebar [class.nav-screen]="!isHidden" (clickOutside)="onClick()"></div>
+<ul>
+  <ng-content></ng-content>
+</ul>
+<div closeSidebar [class.nav-screen]="open" (clickOutside)="clickSidebar?.emit()"></div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  isHidden: boolean;
+
+  menuOpen: boolean;
+
+  links: any[] = [
+    { path: '/home', name: 'HOME' },
+    { path: '/beers', name: 'BEERS' },
+    { path: '/about', name: 'ABOUT' }
+  ];
 
   ngOnInit() {
-    this.isHidden = true;
+    this.menuOpen = false;
   }
 
   toggleMenu() {
-    this.isHidden = !this.isHidden;
+    this.menuOpen = !this.menuOpen;
   }
 }

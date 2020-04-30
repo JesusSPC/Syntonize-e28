@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'sidebar',
@@ -6,18 +6,18 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-  @Input() isHidden: boolean;
-  @Output() clickLink: EventEmitter<any> = new EventEmitter();
+  @HostBinding('class') css = 'nav-menu';
 
-  links: any[] = [
-    { path: '/home', name: 'HOME' },
-    { path: '/beers', name: 'BEERS' },
-    { path: '/about', name: 'ABOUT' }
-  ];
+  @HostBinding('class.open-menu')
+    get hidden() {
+      return this.open;
+    }
 
-  constructor() { }
+  @Input() open: boolean;
 
-  onClick() {
-    this.clickLink.emit();
+  @Output() clickSidebar = new EventEmitter<any>();
+
+  ngOnChanges() {
+
   }
 }
