@@ -1,0 +1,277 @@
+/// Colors ///
+
+  /// Brand colors
+  $brand-1:   #fbba23 !default;
+  $brand-2:   #344f65 !default;
+  $brand-3:   #966900 !default;
+  $brand-4:   #ffdf98 !default;
+/// Brand colors
+
+/// UI Colors
+  $white:       #FFFFFF !default;
+  $ui-200:      #dde7ef !default;
+  $ui-300:      #9abcdc !default;
+  $ui-500:      #597f9e !default;
+  $ui-600:      #344f65 !default;
+  $ui-700:      #738ea7 !default;
+  $ui-800:      #17222b !default;
+  $ui-900:      #121a21 !default;
+  $black:       #212121 !default;
+/// UI Colors
+
+  $gradient-navy: linear-gradient(0deg, $ui-800, $ui-600) !default;
+
+/// Maps
+  $color-map: (
+    primary:    $brand-1,
+    secondary:  $brand-2,
+    tertiary:   $brand-4,
+    accent:     $brand-3,
+    none:       transparent,
+    light:      $white,
+    dark:       $black,
+    ui-200:     $ui-200,
+    ui-300:     $ui-300,
+    ui-500:     $ui-500,
+    ui-600:     $ui-600,
+    ui-700:     $ui-700,
+    ui-800:     $ui-800,
+    ui-900:     $ui-900,
+  );
+
+  $colors-map: $color-map;
+/// Maps
+
+/// Colors ///
+
+/// Breakpoints ///
+
+$breakpoint-map: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+/// Breakpoints ///
+
+/// Layout ///
+
+/// z-index
+  $z-index-map: (
+    xs: -1,
+    base: 0,
+    sm: 1,
+    md: 2,
+    lg: 3,
+    xl: 4,
+    auto: auto,
+  ) !default;
+/// z-index
+
+/// Layout ///
+
+/// Spacing ///
+
+$margin-base: 1rem !default;
+
+$margin-map: (
+  0: 0,
+  1: 1rem,
+  2: 2rem,
+  3: 3rem,
+  4: 4rem,
+  5: 5rem,
+  6: 6rem,
+  7: 7rem,
+  8: 8rem,
+  9: 9rem,
+) !default;
+
+$negative-margin-map: (
+  -1: -1rem,
+  -2: -2rem,
+  -3: -3rem,
+  -4: -4rem,
+  -5: -5rem,
+  -6: -6rem,
+  -7: -7rem,
+  -8: -8rem,
+  -9: -9rem,
+) !default;
+
+$margins-map: map-merge($margin-map, $negative-margin-map);
+
+/// Spacing ///
+
+/// Sizing ///
+
+/// Width - Height
+  $width-map: (
+    0: 0,
+    5: 5%,
+    10: 10%,
+    15: 15%,
+    20: 20%,
+    25: 25%,
+    33: 33.333%,
+    35: 35%,
+    40: 40%,
+    45: 45%,
+    50: 50%,
+    55: 55%,
+    60: 60%,
+    65: 65%,
+    70: 70%,
+    75: 75%,
+    80: 80%,
+    85: 85%,
+    90: 90%,
+    95: 95%,
+    100: 100%,
+    line: 1px,
+    auto: auto,
+  ) !default;
+/// Width - Height
+
+/// Max - Min
+  $max-width-map: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    unset: unset,
+  ) !default;
+/// Max - Min
+
+/// Container
+
+  // $container-map: (
+    // sm: 640px,
+    // md: 768px,
+    // lg: 1024px,
+    // xl: 1280px
+  // ) !default;
+
+  $container-map: (
+    sm: 520px,
+    md: 620px,
+    lg: 720px,
+    //xl: 1200px,
+  ) !default;
+
+/// Container
+
+/// Sizing ///
+
+/// Typography ///
+
+/// Font Family
+  $font-family-primary:      'Titillium Web', cursive !default;
+  //$font-family-primary:      'Patua One', cursive !default;
+  $font-family-secondary:    'Ubuntu Mono', monospace !default;
+
+  $font-family-map: (
+    primary:      $font-family-primary,
+    secondary:    $font-family-secondary,
+  ) !default;
+/// Font Family
+
+/// Font Weight
+  $font-weight-map: (
+    regular:  400,
+    bold:     600,
+  ) !default;
+/// Font Weight
+
+/// Font Size
+  $font-size-map: (
+    xs: 1.4rem,
+    sm: 1.6rem,
+    md: 1.8rem,
+    lg: 2.2rem,
+    xl: 3.2rem,
+    2xl: 6rem,
+    3xl: 9rem,
+    4xl: 12rem,
+    5xl: 16rem,
+  ) !default;
+/// Font Size
+
+/// Leading
+  $line-height-map: (
+    xs:   0.9,
+    base: 1,
+    sm:   1.1,
+    md:   1.2,
+    lg:   1.4,
+    xl:   1.6,
+  ) !default;
+/// Leading
+
+/// Tracking
+  $letter-spacing-map: (
+    -4: -1px,
+    -3: -0.75px,
+    -2: -0.5px,
+    -1: -0.25px,
+     0: 0px,
+     1: 0.25px,
+     2: 0.5px,
+     3: 0.75px,
+     4: 1px
+  ) !default;
+/// Tracking
+
+/// Typography ///
+
+/// Border ///
+
+/// Border
+
+  $border-width-map: (
+    base: 0.1rem,
+    frame: 0.9rem,
+  ) !default;
+
+/// Border
+
+/// Border style
+  $border-style-map: (
+    solid,
+    dashed,
+    dotted,
+    double,
+    none
+  ) !default;
+/// Border style
+
+/// Border radius
+  $border-radius-map: (
+    none: 0,
+    sm: 6px,
+    md: 8px,
+    lg: 10px,
+    xl: 12px,
+    circle: 50%,
+    frame: 34px,
+    rounded: 50px,
+  ) !default;
+
+  $border-radius-base: map-get($border-radius-map, sm) !default;
+  $border-radius-circle: map-get($border-radius-map, circle) !default;
+  $border-radius-rounded: map-get($border-radius-map, rounded) !default;
+/// Border radius
+
+/// Border ///
+
+/// Interactivity ///
+
+/// Transitions
+  // $transition-timing-base: .35s;
+  $transition-timing-base: .3s;
+  $transition-base: all $transition-timing-base ease-in-out !default;
+/// Transitions
+
+/// Interactivity ///
+  $sidebar-width: 15rem;

@@ -3,7 +3,7 @@ import { Component, Output, EventEmitter, Input, HostBinding } from '@angular/co
 @Component({
   selector: 'sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
   @HostBinding('class') css = 'nav-menu';
@@ -16,8 +16,4 @@ export class SidebarComponent {
   @Input() open: boolean;
 
   @Output() clickSidebar = new EventEmitter<any>();
-
-  ngOnChanges() {
-
-  }
 }

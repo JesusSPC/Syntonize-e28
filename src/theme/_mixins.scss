@@ -1,0 +1,113 @@
+@import "src/theme/variables";
+@import "src/theme/functions";
+
+/// Media queries
+  @mixin breakpoint($min, $max) {
+
+    // Min
+    @if ($min != null) and ($max == null) {
+      @if (type-of($min) == string) {
+        @media (min-width: map-get($breakpoint-map, $min)) {
+          @content;
+        }
+      }
+      @else if (type-of($min) == number) {
+        @media (min-width: $min) {
+          @content;
+        }
+      }
+    }
+
+    // Max
+    @if ($min == null) and ($max != null) {
+      @if (type-of($max) == string) {
+        @media (max-width: map-get($breakpoint-map, $max)) {
+          @content;
+        }
+      }
+      @else if (type-of($max) == number) {
+        @media (max-width: $max) {
+          @content;
+        }
+      }
+    }
+
+    // Min and Max
+    @if ($min != null) and ($max != null) {
+      @if (type-of($min) == string) and (type-of($max) == string) {
+        @media (min-width: map-get($breakpoint-map, $min)) and (max-width: map-get($breakpoint-map, $max)) {
+          @content;
+        }
+      }
+      @else if (type-of($min) == string) and (type-of($max) == number) {
+        @media (min-width: map-get($breakpoint-map, $min)) and (max-width: $max) {
+          @content;
+        }
+      }
+      @else if (type-of($min) == number) and (type-of($max) == string) {
+        @media (min-width: $min) and (max-width: map-get($breakpoint-map, $max)) {
+          @content;
+        }
+      }
+      @else if (type-of($min) == number) and (type-of($max) == number) {
+        @media (min-width: $min) and (max-width: $max) {
+          @content;
+        }
+      }
+    }
+
+  }
+/// Media queries
+
+/// Position
+
+  @mixin offset($position: absolute, $z-index: null, $top: null, $right: null, $bottom: null, $left: null, $display: null) {
+    position: $position;
+		z-index: get-z-index($z-index);
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    display: $display;
+  }
+
+  @mixin pseudo($content: '', $position: absolute, $z-index: null, $top: null, $right: null, $bottom: null, $left: null, $display: null) {
+    content: $content;
+    position: $position;
+		z-index: get-z-index($z-index);
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    display: $display;
+  }
+
+/// Position
+
+/// Display
+
+  @mixin flex($flex, $x-axis, $y-axis, $direction, $wrap) {
+    display: $flex;
+    justify-content: $x-axis;
+    align-items: $y-axis;
+    flex-flow: $direction $wrap;
+  }
+
+/// Display
+
+/// Margin
+
+  @mixin margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+/// Margin
+
+/// Transition
+
+  @mixin transition($property: all, $duration: $transition-timing-base, $timing: ease-in-out) {
+    transition: $property $duration $timing;
+  }
+
+/// Transition
