@@ -6,7 +6,7 @@ import { Component, Output, EventEmitter, Input, HostBinding } from '@angular/co
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  @HostBinding('class') css = 'nav-menu';
+  @HostBinding('class.nav-menu') css = 'nav-menu';
 
   @HostBinding('class.open-menu')
     get hidden() {

@@ -1,0 +1,47 @@
+
+
+@import "src/theme/variables";
+
+// Map-gets
+
+  @function get-z-index($key) {
+    @return map-get($z-index-map, $key);
+  }
+
+  @function get-margin($key) {
+    @return map-get($margins-map, $key);
+  }
+
+  @function get-font-family($key) {
+    @return map-get($font-family-map, $key);
+  }
+
+  @function get-font-weight($key) {
+    @return map-get($font-weight-map, $key);
+  }
+
+  @function get-font-size($key) {
+    @return map-get($font-size-map, $key);
+  }
+
+  @function get-line-height($key) {
+    @return map-get($line-height-map, $key);
+  }
+
+  @function get-letter-spacing($key) {
+    @return map-get($letter-spacing-map, $key);
+  }
+
+  @function get-color($key) {
+    @return map-get($colors-map, $key);
+  }
+
+  @function get-border($key) {
+    @return map-get($border-width-map, $key);
+  }
+
+  @function get-border-radius($key) {
+    @return map-get($border-radius-map, $key);
+  }
+
+// Map-gets

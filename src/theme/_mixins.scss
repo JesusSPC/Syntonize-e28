@@ -111,3 +111,12 @@
   }
 
 /// Transition
+
+/// Width & Height
+
+  @mixin width-height($width: null, $height: null) {
+    width: $width;
+    height: $height;
+  }
+
+/// Width & Height

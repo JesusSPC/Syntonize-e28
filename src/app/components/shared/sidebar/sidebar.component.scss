@@ -1,23 +1,21 @@
-@import "src/theme/variables";
+@import "src/theme/mixins";
 @import "src/theme/text";
 
 :host {
   &.nav-menu {
-    position: fixed;
-    top: 0;
-    left: -30rem;
-    width: $sidebar-width;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .2);
+    @include offset(fixed, xl, 0);
+    @include width-height($sidebar-width, 100vh);
     border-right: 0.2rem solid rgb(82, 82, 82);
-    transition-timing-function: ease-in-out;
-    transition: left, 1s;
-    z-index: 10;
+    background-color: rgba(0, 0, 0, .2);
+    transform: translateX(-15rem);
+    transition: transform 1s, background-color 1s;
   }
 
+
   &.open-menu {
-    left: 0rem;
     background-color: rgba(0, 0, 0, .8);
+    transform: translateX(0rem);
+    transition: transform 1s, background-color 1s;
   }
 
   & ::ng-deep li  {
@@ -42,18 +40,13 @@
   }
 
   ul {
-    list-style: none;
-    display: flex;
+    @include flex(flex, center, center, null, null);
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    list-style: none;
   }
 
   .nav-screen  {
-    position: fixed;
-    top: 0;
-    left: $sidebar-width;
-    width: calc(100vw - #{$sidebar-width});
-    height: 100vh;
+    @include offset(fixed, 4, 0, null, null, $sidebar-width);
+    @include width-height(calc(100vw - #{$sidebar-width}), 100vh);
   }
 }

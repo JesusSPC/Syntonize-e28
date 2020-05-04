@@ -1,20 +1,27 @@
+@import "src/theme/mixins";
+
+$nav-button-size: 6rem;
+$nav-button-air: calc(#{$nav-button-size} / 8);
+
 .nav-button {
-  position: fixed;
-  top: 0;
-  left: calc(100vw - 8rem);
-  height: 6rem;
-  width: 6rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: -8px 6px 10px 0px rgba(207,207,207,1);
-  background-color: orange;
-  margin: 1rem;
-  z-index: 1;
+  @include offset(fixed, sm, 0, null, null, calc(100vw - calc(#{$nav-button-size} + calc(#{$nav-button-air} * 2))), null);
+  @include width-height($nav-button-size, $nav-button-size);
+  border-radius: get-border-radius(sm);
+  padding: $nav-button-air;
+  margin: $nav-button-air;
+  background-color: $brand-5;
+  box-shadow: 3px 3px 10px 0px $brand-2;
+}
+
+.nav-bars {
+  @include width-height(100%, 100%);
+  @include flex(flex, center, center, null, null);
+  flex-direction: column;
 }
 
 .nav-bars div {
-  width: 4rem;
-  height: 0.5rem;
+  @include width-height(100%, 100%);
+  border-radius: get-border-radius(sm);
+  margin: calc(#{$nav-button-air} / 2) 0;
   background-color: black;
-  margin: 0.6rem 0;
 }
