@@ -8,6 +8,7 @@
   @return calc(#{$index} - calc(#{$nav-button-size} + calc(#{$nav-button-air} * 2)));
 }
 
+// Change nav-button-size value to resize automatically
 $nav-button-size: 6rem;
 $nav-button-air: nav-button-air(8);
 

@@ -1,7 +1,14 @@
 @import "src/theme/mixins";
 @import "src/theme/text";
 
-$sidebar-width: 15rem;
+.menu-col {
+  @include menu-column;
+}
+
+.nav-screen {
+  @include offset(fixed, 4, 0, null, null, $sidebar-width);
+  @include width-height(calc(100vw - #{$sidebar-width}), 100vh);
+}
 
 :host {
   &.nav-menu {
@@ -12,7 +19,6 @@ $sidebar-width: 15rem;
     transform: translateX(-15rem);
     transition: transform 1s, background-color 1s;
   }
-
 
   &.open-menu {
     background-color: rgba(0, 0, 0, .8);
@@ -30,25 +36,24 @@ $sidebar-width: 15rem;
       border-bottom: none;
     }
 
-    a {
+    .menu-col {
+      @include menu-column;
+    }
+
+    .menu-name {
       text-decoration: none;
       color: white;
       font-size: 2.5rem;
+      cursor: pointer;
+
+      &--sub {
+        @extend .menu-name;
+        font-size: 1.5rem;
+      }
     }
 
     .active {
       color: $brand-6;
     }
-  }
-
-  ul {
-    @include flex(flex, center, center, null, null);
-    flex-direction: column;
-    list-style: none;
-  }
-
-  .nav-screen  {
-    @include offset(fixed, 4, 0, null, null, $sidebar-width);
-    @include width-height(calc(100vw - #{$sidebar-width}), 100vh);
   }
 }

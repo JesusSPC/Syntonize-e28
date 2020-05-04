@@ -120,3 +120,14 @@
   }
 
 /// Width & Height
+
+
+/// Menu Column ///
+
+@mixin menu-column {
+  @include flex(flex, center, center, null, null);
+  flex-direction: column;
+  list-style: none;
+}
+
+/// Menu Column ///
