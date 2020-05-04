@@ -1,10 +1,18 @@
 @import "src/theme/mixins";
 
+@function nav-button-air($air) {
+  @return calc(#{$nav-button-size} / #{$air});
+}
+
+@function nav-offset-left($index) {
+  @return calc(#{$index} - calc(#{$nav-button-size} + calc(#{$nav-button-air} * 2)));
+}
+
 $nav-button-size: 6rem;
-$nav-button-air: calc(#{$nav-button-size} / 8);
+$nav-button-air: nav-button-air(8);
 
 .nav-button {
-  @include offset(fixed, sm, 0, null, null, calc(100vw - calc(#{$nav-button-size} + calc(#{$nav-button-air} * 2))), null);
+  @include offset(fixed, sm, 0, null, null, nav-offset-left(100vw), null);
   @include width-height($nav-button-size, $nav-button-size);
   border-radius: get-border-radius(sm);
   padding: $nav-button-air;
@@ -23,5 +31,5 @@ $nav-button-air: calc(#{$nav-button-size} / 8);
   @include width-height(100%, 100%);
   border-radius: get-border-radius(sm);
   margin: calc(#{$nav-button-air} / 2) 0;
-  background-color: black;
+  background-color: $brand-1;
 }
