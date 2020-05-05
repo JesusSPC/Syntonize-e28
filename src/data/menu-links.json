@@ -21,6 +21,10 @@
     "name": "ABOUT",
     "path": "/about",
     "active": false,
-    "submenu": []
+    "submenu": [
+      { "name": "CORONA", "brand": "corona" },
+      { "name": "INEDIT", "brand": "inedit" },
+      { "name": "ESTRELLA GALICIA", "brand": "estrella" }
+    ]
   }
 ]

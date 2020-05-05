@@ -28,9 +28,8 @@
   }
 
   & ::ng-deep li {
-    width: 80%;
+    width: 100%;
     text-align: center;
-    padding: 2rem 0;
     border-bottom: 0.2rem solid rgb(82, 82, 82);
     z-index: 4;
 
@@ -39,20 +38,33 @@
       border-bottom: none;
     }
 
-    .menu-col {
+    & .submenu {
       @include menu-column;
-      z-index: 4;
+      height: 0;
+      overflow: hidden;
+      background: #444359;
+      font-size: 14px;
+      transition: height 0.4s ease;
 
+      // & a {
+      //   display: block;
+      //   text-decoration: none;
+      //   transition: all 0.25s ease-in-out;
+      // }
     }
 
     .menu-name {
+      display: block;
       text-decoration: none;
       color: white;
       font-size: 2.5rem;
+      padding: 2rem 0;
       cursor: pointer;
+      transition: all 0.25s ease-in-out;
 
       &--sub {
         @extend .menu-name;
+        padding: 1.5rem 0;
         font-size: 1.5rem;
       }
     }

@@ -14,36 +14,47 @@ export class AppComponent {
   menuIsOpen: boolean;
 
   submenu: any;
-  links: MenuLink[] = (data  as  any).default;
+  menus: MenuLink[] = (data  as  any).default;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
-  toggleMenu() {
+  toggleSidebar() {
     this.menuIsOpen = !this.menuIsOpen;
-    this.links.forEach(l => l.active = false);
+    this.menus.forEach(l => l.active = false);
   }
 
-  toggleSubmenu(idx) {
-    this.links[idx].active = !this.links[idx].active;
-    this.submenu = this.links[idx];
-    console.log(`Active for ${this.links[idx].name} is ${this.links[idx].active}`);
+  toggleMenus(index: number) {
+    // if (this.menus[index].submenu.length < 0) {
+
+    // }
+    this.menus.filter((menu, i) =>
+      i !== index && menu.active
+    ).forEach(menu => menu.active = !menu.active);
+
+    this.menus[index].active = !this.menus[index].active;
   }
 
-  goToLink(link, idx?) {
-    if (!link.submenu || link.submenu.length < 1) {
-      this.toggleMenu();
-      this.router.navigate([`${link.path}`], {relativeTo: this.route});
-    }
-    if (link.submenu && link.submenu.length > 0) {
-        this.toggleSubmenu(idx);
-    }
-  }
+  // toggleSubmenu(idx) {
+  //   this.links[idx].active = !this.links[idx].active;
+  //   this.submenu = this.links[idx];
+  //   console.log(`Active for ${this.links[idx].name} is ${this.links[idx].active}`);
+  // }
 
-  goToSubLink(link, sublink, idx?) {
-    this.toggleMenu();
-    this.router.navigate([`${link.path}`], { queryParams: { brand: sublink.brand }, relativeTo: this.route});
-  }
+  // goToLink(link, idx?) {
+  //   if (!link.submenu || link.submenu.length < 1) {
+  //     this.toggleMenu();
+  //     this.router.navigate([`${link.path}`], {relativeTo: this.route});
+  //   }
+  //   if (link.submenu && link.submenu.length > 0) {
+  //       this.toggleSubmenu(idx);
+  //   }
+  // }
+
+  // goToSubLink(link, sublink, idx?) {
+  //   this.toggleMenu();
+  //   this.router.navigate([`${link.path}`], { queryParams: { brand: sublink.brand }, relativeTo: this.route});
+  // }
 }

@@ -4,5 +4,5 @@ export interface MenuLink {
   name: string;
   path: string;
   active: boolean;
-  submenu: SubmenuLink[];
+  submenu?: SubmenuLink[];
 }
