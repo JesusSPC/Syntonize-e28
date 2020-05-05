@@ -1,0 +1,26 @@
+[
+  {
+    "name": "HOME",
+    "path": "/home",
+    "active": false,
+    "submenu": []
+  },
+  {
+    "name": "BEERS",
+    "path": "/beers",
+    "active": false,
+    "submenu": [
+      { "name": "LAGER", "brand": "lager" },
+      { "name": "ALHAMBRA", "brand": "alhambra" },
+      { "name": "CORONA", "brand": "corona" },
+      { "name": "INEDIT", "brand": "inedit" },
+      { "name": "ESTRELLA GALICIA", "brand": "estrella" }
+    ]
+  },
+  {
+    "name": "ABOUT",
+    "path": "/about",
+    "active": false,
+    "submenu": []
+  }
+]

@@ -3,16 +3,17 @@
 
 .menu-col {
   @include menu-column;
+  z-index: 4;
 }
 
 .nav-screen {
-  @include offset(fixed, 4, 0, null, null, $sidebar-width);
+  @include offset(fixed, xl, 0, null, null, $sidebar-width);
   @include width-height(calc(100vw - #{$sidebar-width}), 100vh);
 }
 
 :host {
   &.nav-menu {
-    @include offset(fixed, xl, 0);
+    @include offset(fixed, xl);
     @include width-height($sidebar-width, 100vh);
     border-right: 0.2rem solid rgb(82, 82, 82);
     background-color: rgba(0, 0, 0, .2);
@@ -26,11 +27,13 @@
     transition: transform 1s, background-color 1s;
   }
 
-  & ::ng-deep li  {
+  & ::ng-deep li {
     width: 80%;
     text-align: center;
     padding: 2rem 0;
     border-bottom: 0.2rem solid rgb(82, 82, 82);
+    z-index: 4;
+
 
     &:last-child {
       border-bottom: none;
@@ -38,6 +41,8 @@
 
     .menu-col {
       @include menu-column;
+      z-index: 4;
+
     }
 
     .menu-name {

@@ -1,0 +1,24 @@
+@import "src/theme/functions";
+@import "src/theme/mixins";
+@import "src/theme/text";
+
+.sub-menu {
+  @include offset(relative, lg);
+  width: 100%;
+  height: 10%;
+  overflow: hidden;
+
+  &--box {
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
+    transition: transform 1s;
+
+    &--open {
+      width: 100%;
+      height: 100%;
+      transform: translateY(0%);
+      transition: transform 1s;
+    }
+  }
+}

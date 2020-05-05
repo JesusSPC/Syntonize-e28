@@ -1,28 +1,13 @@
-<!-- <navbar-button (clickBurger)="toggleMenu()"></navbar-button>
-
-<sidebar [open]="menuOpen" (clickSidebar)="toggleMenu()">
-  <li *ngFor="let link of links">
-    <a
-      (click)="toggleMenu()"
-      [routerLink]="link?.path"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-    >{{link?.name}}</a>
-  </li>
-</sidebar>
-
-<router-outlet></router-outlet> -->
-
 <navbar-button (clickBurger)="toggleMenu()"></navbar-button>
 
 <sidebar [open]="menuIsOpen" (clickSidebar)="toggleMenu()">
-  <li *ngFor="let link of links">
-    <span class="menu-name" (click)="goTo(link)">{{link?.name}}</span>
-    <ul class="menu-col" *ngIf="link?.submenu" >
-      <li [hidden]="!hasSubmenu" *ngFor="let subLink of link?.submenu">
-        <span class="menu-name--sub" (click)="goTo(link, subLink)">{{subLink.name}}</span>
+  <li *ngFor="let link of links; let idx = index">
+    <span class="menu-name" (click)="goToLink(link, idx)">{{link?.name}}</span>
+    <sidebar-submenu *ngIf="link?.submenu.length>0" [attr.hidden]="link.active?null:true" [link]="link">
+      <li *ngFor="let sublink of link?.submenu">
+        <span class="menu-name--sub" (click)="goToSubLink(link, sublink)">{{sublink?.name}}</span>
       </li>
-    </ul>
+    </sidebar-submenu>
   </li>
 </sidebar>
 

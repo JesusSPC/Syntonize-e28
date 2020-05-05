@@ -1,3 +1,5 @@
-<ul>
-  <ng-content></ng-content>
+<ul #submenu class="sub-menu">
+  <div class="menu-col sub-menu--box" [ngClass]="{'sub-menu--box--open':link.active}">
+    <ng-content></ng-content>
+  </div>
 </ul>
