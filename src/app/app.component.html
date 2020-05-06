@@ -2,19 +2,35 @@
 
 <sidebar [open]="menuIsOpen" (clickSidebar)="toggleSidebar()">
   <li *ngFor="let menu of menus; let i = index" (click)="toggleMenus(i)">
-    <a class="menu-name" [routerLink]="menu?.submenu.length == 0 ? menu?.path : null" routerLinkActive="active">
+    <a class="menu-name" [routerLink]="menu?.submenu.length == 0 ? menu?.path : null" [routerLinkActive]="[menu?.active ? 'active' : null]">
+      {{menu?.name | uppercase}}
+    </a>
+    <sidebar-submenu [menu]="menu">
+      <li *ngFor="let submenu of menu?.submenu">
+        <a class="menu-name--sub" [routerLink]="[menu?.path, submenu?.brand]">
+          {{submenu?.name | uppercase}}
+        </a>
+      </li>
+    </sidebar-submenu>
+  </li>
+</sidebar>
+
+
+<!-- <sidebar [open]="menuIsOpen" (clickSidebar)="toggleSidebar()">
+  <li *ngFor="let menu of menus; let i = index" (click)="toggleMenus(i)">
+    <a class="menu-name" [routerLink]="menu?.submenu.length == 0 ? menu?.path : null" [routerLinkActive]="[menu?.active ? 'active' : null]">
       {{menu?.name | uppercase}}
     </a>
     <ul class="menu-col submenu" #submenu
     [style.height.px]="menu.active?submenu.scrollHeight*2:0">
       <li *ngFor="let submenu of menu?.submenu">
-        <a class="menu-name--sub" [routerLink]="menu?.path">
+        <a class="menu-name--sub" [routerLink]="[menu?.path, submenu?.brand]">
           {{submenu?.name | uppercase}}
         </a>
       </li>
     </ul>
   </li>
-</sidebar>
+</sidebar> -->
 
 
   <!-- <li *ngFor="let menu of menus; let i = index"
