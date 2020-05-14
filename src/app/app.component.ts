@@ -12,7 +12,6 @@ import { MenuLink } from './interfaces/menu-link';
 export class AppComponent  {
 
   menuIsOpen: boolean;
-
   submenu: any;
   menus: MenuLink[] = (data  as  any).default;
 
@@ -27,9 +26,6 @@ export class AppComponent  {
   }
 
   toggleMenu(index: number) {
-    // if (this.menus[index].submenu.length < 0) {
-
-    // }
     this.menus.filter((menu, i) =>
       i !== index && menu.active
     ).forEach(menu => menu.active = !menu.active);
@@ -37,17 +33,18 @@ export class AppComponent  {
     this.menus[index].active = !this.menus[index].active;
   }
 
-  // goToLink(link, idx?) {
-  //   if (!link.submenu || link.submenu.length < 1) {
-  //     this.toggleMenu();
-  //     this.router.navigate([`${link.path}`], {relativeTo: this.route});
-  //   }
-  //   if (link.submenu && link.submenu.length > 0) {
-  //       this.toggleSubmenu(idx);
-  //   }
-  // }
+  goToLink(link, idx?) {
+    if (!link.submenu || link.submenu.length === 0) {
+      this.toggleMenu(idx);
+      this.router.navigate([`${link.path}`], {relativeTo: this.route});
+    }
+    if (link.submenu && link.submenu.length > 0) {
+      this.toggleMenu(idx);
+    }
+  }
 
   goToSubLink(link, sublink, idx?) {
+    this.toggleSidebar();
     this.router.navigate([`${link.path}`], { queryParams: { brand: sublink.brand }, relativeTo: this.route});
   }
 }

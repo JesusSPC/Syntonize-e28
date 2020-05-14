@@ -14,10 +14,10 @@ export class DropdownDirective {
   @HostBinding('style.height.px')
   get toggleDropdown() {
     if (this.isOpen) {
-      console.log('Open!')
+      console.log('Open!');
       return this.elRef.nativeElement.scrollHeight * 2;
     } else {
-      console.log('Close!')
+      console.log('Close!');
       return 0;
     }
   }
