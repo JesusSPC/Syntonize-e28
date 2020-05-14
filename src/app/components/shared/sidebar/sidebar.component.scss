@@ -22,52 +22,39 @@
     transition: transform 1s, background-color 1s;
   }
 
-  & ::ng-deep li {
-    width: 100%;
-    text-align: center;
-    border-bottom: 0.2rem solid rgb(82, 82, 82);
+  .menu-col {
+    @include menu-column;
     z-index: 4;
+  }
 
-    .menu-name {
-      display: block;
-      text-decoration: none;
-      color: white;
-      font-size: 2.5rem;
-      padding: 2rem 0;
-      cursor: pointer;
-      transition: all 0.25s ease-in-out;
+  & ::ng-deep {
+    & .menu-item {
+      width: 100%;
+      text-align: center;
+      border-bottom: 0.2rem solid rgb(82, 82, 82);
+      z-index: 4;
 
-      &--sub {
-        @extend .menu-name;
-        padding: 1.5rem 0;
-        font-size: 1.5rem;
+      &--name {
+        display: block;
+        text-decoration: none;
+        color: white;
+        font-size: 2.5rem;
+        padding: 2rem 0;
+        cursor: pointer;
+
+        &--sub {
+          @extend .menu-item--name;
+          font-size: 1.5rem;
+          padding: 1rem 0;
+        }
       }
     }
 
-    .sub-menu {
+    & .sub-menu {
       @include menu-column;
       overflow: hidden;
-      background: #444359;
-      font-size: 14px;
+      background-color: #444359;
       transition: height 0.4s ease;
-      height: 0;
-
-      & li {
-        width: 100%;
-        text-align: center;
-        border-bottom: 0.2rem solid rgb(82, 82, 82);
-        z-index: 4;
-
-        & .submenu-name {
-          display: block;
-          text-decoration: none;
-          color: white;
-          font-size: 1.5rem;
-          padding: 1.5rem 0;
-          cursor: pointer;
-          transition: all 0.25s ease-in-out;
-        }
-      }
     }
 
     &:last-child {

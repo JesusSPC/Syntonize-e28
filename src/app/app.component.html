@@ -2,12 +2,12 @@
 
 <sidebar [open]="menuIsOpen" (clickSidebar)="toggleSidebar()">
   <li class="menu-item" *ngFor="let menu of menus; let i = index" (click)="toggleMenus(i)">
-    <a class="menu-name" [routerLink]="menu?.submenu.length == 0 ? menu?.path : null" [routerLinkActive]="[menu?.active ? 'active' : null]">
+    <a class="menu-item--name" [routerLink]="menu?.submenu.length == 0 ? menu?.path : null" [routerLinkActive]="[menu?.active ? 'active' : null]">
       {{menu?.name | uppercase}}
     </a>
-      <ul [appDropdown]="menu?.active" class="sub-menu menu-col">
-        <li *ngFor="let submenu of menu?.submenu">
-          <a class="submenu-name" [routerLink]="[menu?.path, submenu?.brand]">
+      <ul class="menu-col sub-menu" [appDropdown]="menu?.active">
+        <li class="menu-item" *ngFor="let submenu of menu?.submenu">
+          <a class="menu-item--name--sub" [routerLink]="[menu?.path, submenu?.brand]">
             {{submenu?.name | uppercase}}
           </a>
         </li>
