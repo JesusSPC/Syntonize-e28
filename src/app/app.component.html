@@ -1,13 +1,13 @@
 <navbar-button (clickBurger)="toggleSidebar()"></navbar-button>
 
 <sidebar [open]="menuIsOpen" (clickSidebar)="toggleSidebar()">
-  <li class="menu-item" *ngFor="let menu of menus; let i = index" (click)="toggleMenus(i)">
-    <a class="menu-item--name" [routerLink]="menu?.submenu.length == 0 ? menu?.path : null" [routerLinkActive]="[menu?.active ? 'active' : null]">
+  <li class="menu-item" *ngFor="let menu of menus; let i = index">
+    <a class="menu-item--name" (click)="toggleMenu(i)" [routerLink]="menu?.submenu.length == 0 ? menu?.path : null" [ngClass]="{active: menu?.active}">
       {{menu?.name | uppercase}}
     </a>
       <ul class="menu-col sub-menu" [appDropdown]="menu?.active">
         <li class="menu-item" *ngFor="let submenu of menu?.submenu">
-          <a class="menu-item--name--sub" [routerLink]="[menu?.path, submenu?.brand]">
+          <a class="menu-item--name--sub" (click)="goToSubLink(menu, submenu)">
             {{submenu?.name | uppercase}}
           </a>
         </li>

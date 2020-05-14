@@ -9,7 +9,7 @@ import { MenuLink } from './interfaces/menu-link';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent  {
 
   menuIsOpen: boolean;
 
@@ -26,7 +26,7 @@ export class AppComponent {
     this.menus.forEach(l => l.active = false);
   }
 
-  toggleMenus(index: number) {
+  toggleMenu(index: number) {
     // if (this.menus[index].submenu.length < 0) {
 
     // }
@@ -36,12 +36,6 @@ export class AppComponent {
 
     this.menus[index].active = !this.menus[index].active;
   }
-
-  // toggleSubmenu(idx) {
-  //   this.links[idx].active = !this.links[idx].active;
-  //   this.submenu = this.links[idx];
-  //   console.log(`Active for ${this.links[idx].name} is ${this.links[idx].active}`);
-  // }
 
   // goToLink(link, idx?) {
   //   if (!link.submenu || link.submenu.length < 1) {
@@ -53,8 +47,7 @@ export class AppComponent {
   //   }
   // }
 
-  // goToSubLink(link, sublink, idx?) {
-  //   this.toggleMenu();
-  //   this.router.navigate([`${link.path}`], { queryParams: { brand: sublink.brand }, relativeTo: this.route});
-  // }
+  goToSubLink(link, sublink, idx?) {
+    this.router.navigate([`${link.path}`], { queryParams: { brand: sublink.brand }, relativeTo: this.route});
+  }
 }
