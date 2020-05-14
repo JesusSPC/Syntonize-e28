@@ -5,24 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { Pages } from './pages/index';
-
-import { NavbarButtonComponent } from './components/shared/navbar/navbar-button.component';
-import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
-import { SidebarSubmenuComponent } from './components/shared/sidebar-submenu/sidebar-submenu.component';
-
-import { CloseSidebarDirective } from './directives/sidebar-close.directive';
-
+import { Components } from './components/index';
 import { Directives } from './directives/index';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...Pages,
+    ...Components,
     ...Directives,
-    NavbarButtonComponent,
-    SidebarComponent,
-    CloseSidebarDirective,
-    SidebarSubmenuComponent,
   ],
   imports: [
     BrowserModule,

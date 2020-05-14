@@ -5,7 +5,6 @@
     <a class="menu-name" [routerLink]="menu?.submenu.length == 0 ? menu?.path : null" [routerLinkActive]="[menu?.active ? 'active' : null]">
       {{menu?.name | uppercase}}
     </a>
-    <!-- <sidebar-submenu [menu]="menu"> -->
       <ul [appDropdown]="menu?.active" class="sub-menu menu-col">
         <li *ngFor="let submenu of menu?.submenu">
           <a class="submenu-name" [routerLink]="[menu?.path, submenu?.brand]">
@@ -13,52 +12,7 @@
           </a>
         </li>
       </ul>
-    <!-- </sidebar-submenu> -->
   </li>
 </sidebar>
-
-
-<!-- <sidebar [open]="menuIsOpen" (clickSidebar)="toggleSidebar()">
-  <li *ngFor="let menu of menus; let i = index" (click)="toggleMenus(i)">
-    <a class="menu-name" [routerLink]="menu?.submenu.length == 0 ? menu?.path : null" [routerLinkActive]="[menu?.active ? 'active' : null]">
-      {{menu?.name | uppercase}}
-    </a>
-    <ul class="menu-col submenu" #submenu
-    [style.height.px]="menu.active?submenu.scrollHeight*2:0">
-      <li *ngFor="let submenu of menu?.submenu">
-        <a class="menu-name--sub" [routerLink]="[menu?.path, submenu?.brand]">
-          {{submenu?.name | uppercase}}
-        </a>
-      </li>
-    </ul>
-  </li>
-</sidebar> -->
-
-
-  <!-- <li *ngFor="let menu of menus; let i = index"
-    [class.active]="menu.active">
-    <div class="menu" (click)="toggle(i)">
-      <i [class]="menu.iconClass"></i>
-      {{ menu.name }}
-      <i class="fa fa-chevron-down"></i>
-    </div>
-    <ul class="submenu" #submenu
-      [style.height.px]="menu.active ? submenu.scrollHeight : 0">
-      <li *ngFor="let submenu of menu.submenu">
-        <a [href]="submenu.url">{{ submenu.name }}</a>
-      </li>
-    </ul>
-  </li> -->
-
-<!-- <sidebar [open]="menuIsOpen" (clickSidebar)="toggleMenu()">
-  <li *ngFor="let link of links; let idx = index">
-    <span class="menu-name" (click)="goToLink(link, idx)">{{link?.name}}</span>
-    <sidebar-submenu *ngIf="link?.submenu.length>0" [attr.hidden]="link.active?null:true" [link]="link">
-      <li *ngFor="let sublink of link?.submenu">
-        <span class="menu-name--sub" (click)="goToSubLink(link, sublink)">{{sublink?.name}}</span>
-      </li>
-    </sidebar-submenu>
-  </li>
-</sidebar> -->
 
 <router-outlet></router-outlet>

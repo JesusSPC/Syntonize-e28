@@ -5,5 +5,6 @@ import { CloseSidebarDirective } from './sidebar-close.directive';
 export { CloseSidebarDirective } from './sidebar-close.directive';
 
 export const Directives: any[] = [
-  DropdownDirective
+  DropdownDirective,
+  CloseSidebarDirective
 ];
