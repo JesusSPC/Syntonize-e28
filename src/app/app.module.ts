@@ -10,16 +10,19 @@ import { NavbarButtonComponent } from './components/shared/navbar/navbar-button.
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { SidebarSubmenuComponent } from './components/shared/sidebar-submenu/sidebar-submenu.component';
 
-import { CloseSidebarDirective } from './components/shared/sidebar/sidebar-close.directive';
+import { CloseSidebarDirective } from './directives/sidebar-close.directive';
+
+import { Directives } from './directives/index';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...Pages,
+    ...Directives,
     NavbarButtonComponent,
     SidebarComponent,
     CloseSidebarDirective,
-    SidebarSubmenuComponent
+    SidebarSubmenuComponent,
   ],
   imports: [
     BrowserModule,

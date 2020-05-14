@@ -1,3 +1,4 @@
-<ul #submenu class="sub-menu menu-col" [style.height.px]="menu.active?submenu.scrollHeight*2:0">
+<ul #submenu class="sub-menu menu-col" [style.height.px]="[menu.active?submenu.scrollHeight*2:0]">
+<!-- <ul appDropdown class="sub-menu menu-col"> -->
     <ng-content></ng-content>
 </ul>

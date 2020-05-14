@@ -1,24 +1,33 @@
-@import "src/theme/functions";
-@import "src/theme/mixins";
-@import "src/theme/text";
+// @import "src/theme/functions";
+// @import "src/theme/mixins";
+// @import "src/theme/text";
 
-.sub-menu {
-  @include offset(relative, lg);
-  width: 100%;
-  height: 10%;
-  overflow: hidden;
+// .sub-menu {
+//   @include menu-column;
+//   overflow: hidden;
+//   background: #444359;
+//   font-size: 14px;
+//   transition: height 0.4s ease;
+//   height: 0;
+// }
 
-  &--box {
-    width: 100%;
-    height: 100%;
-    transform: translateY(-100%);
-    transition: transform 1s;
+// :host {
 
-    &--open {
-      width: 100%;
-      height: 100%;
-      transform: translateY(0%);
-      transition: transform 1s;
-    }
-  }
-}
+//   & ::ng-deep li {
+
+//     width: 100%;
+//     text-align: center;
+//     border-bottom: 0.2rem solid rgb(82, 82, 82);
+//     z-index: 4;
+
+//     .submenu-name {
+//       display: block;
+//       text-decoration: none;
+//       color: white;
+//       font-size: 1.5rem;
+//       padding: 1.5rem 0;
+//       cursor: pointer;
+//       transition: all 0.25s ease-in-out;
+//     }
+//   }
+// }

@@ -1,11 +1,6 @@
 @import "src/theme/mixins";
 @import "src/theme/text";
 
-.menu-col {
-  @include menu-column;
-  z-index: 4;
-}
-
 .nav-screen {
   @include offset(fixed, xl, 0, null, null, $sidebar-width);
   @include width-height(calc(100vw - #{$sidebar-width}), 100vh);
@@ -33,26 +28,6 @@
     border-bottom: 0.2rem solid rgb(82, 82, 82);
     z-index: 4;
 
-
-    &:last-child {
-      border-bottom: none;
-    }
-
-    & .submenu {
-      @include menu-column;
-      height: 0;
-      overflow: hidden;
-      background: #444359;
-      font-size: 14px;
-      transition: height 0.4s ease;
-
-      // & a {
-      //   display: block;
-      //   text-decoration: none;
-      //   transition: all 0.25s ease-in-out;
-      // }
-    }
-
     .menu-name {
       display: block;
       text-decoration: none;
@@ -69,8 +44,41 @@
       }
     }
 
+    .sub-menu {
+      @include menu-column;
+      overflow: hidden;
+      background: #444359;
+      font-size: 14px;
+      transition: height 0.4s ease;
+      height: 0;
+
+      & li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 0.2rem solid rgb(82, 82, 82);
+        z-index: 4;
+
+        & .submenu-name {
+          display: block;
+          text-decoration: none;
+          color: white;
+          font-size: 1.5rem;
+          padding: 1.5rem 0;
+          cursor: pointer;
+          transition: all 0.25s ease-in-out;
+        }
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
     .active {
       color: $brand-6;
     }
   }
 }
+
+
+

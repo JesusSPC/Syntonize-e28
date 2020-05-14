@@ -1,0 +1,8 @@
+@import "src/theme/mixins";
+@import "src/theme/text";
+
+
+.menu-col {
+  @include menu-column;
+  z-index: 4;
+}

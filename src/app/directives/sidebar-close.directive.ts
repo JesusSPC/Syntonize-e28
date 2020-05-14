@@ -1,7 +1,7 @@
 import { Directive, EventEmitter, Output, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[closeSidebar]'
+  selector: '[appCloseSidebar]'
 })
 export class CloseSidebarDirective {
 
