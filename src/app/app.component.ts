@@ -3,7 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import * as data from 'src/data/menu-links.json';
 import { MenuLink } from './interfaces/menu-link';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

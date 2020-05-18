@@ -1,0 +1,13 @@
+<div class="list">
+  <div class="list-table">
+    <ul>
+      <ng-content></ng-content>
+    </ul>
+  </div>
+
+  <div class="list-controls">
+    <p (click)="previousPage()"><< {{ 'Previous' | uppercase }}</p>
+    <span> | </span>
+    <p (click)="nextPage()">{{ 'Next' | uppercase }} >></p>
+  </div>
+</div>
