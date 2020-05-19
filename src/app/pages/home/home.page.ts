@@ -1,7 +1,7 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PunkService } from 'src/app/services';
-import { Observable, merge, concat } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'home-page',
@@ -10,28 +10,27 @@ import { map, mergeMap } from 'rxjs/operators';
 })
 export class HomePage implements OnInit {
   beers$: Observable<any>;
+  currentBeers$: Observable<any>;
   beersPagination: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   beersListPage = 1;
   beersListLimit = 5;
-  allBeers = [];
 
   constructor(private punkService: PunkService) { }
 
   ngOnInit(): void {
-    const request$ = this.punkService.getAllBeers(this.beersListPage, 80);
-    this.beers$ = concat(...request$);
+    this.beers$ = this.punkService.getAllBeers(this.beersListPage, 80);
+    this.changeList(1);
   }
 
-  ngAfterViewInit() {
-    // this.beers$.subscribe(observer => console.log(observer));
+  changeList(listNumber) {
+    this.currentBeers$ = this.beers$.pipe(
+      map((entry: any[]) =>
+        this.setBeersList(listNumber, entry)
+    ));
   }
 
-  setBeersList(listNumber: number) {
-    this.beersListPage = listNumber;
-    this.beers$ = this.punkService.getBeers(this.beersListPage, this.beersListLimit);
-  }
-
-  ngOnDestroy() {
-
+  setBeersList(listNumber, beers) {
+    return beers.filter((beer: any, i: number) =>
+      i < (listNumber * this.beersListLimit) && i >= ((listNumber * this.beersListLimit) - this.beersListLimit));
   }
 }
