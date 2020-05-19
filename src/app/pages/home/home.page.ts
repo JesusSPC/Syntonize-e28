@@ -9,8 +9,9 @@ import { Observable } from 'rxjs';
 })
 export class HomePage implements OnInit {
   beers$: Observable<any>;
+  beersPagination: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   beersListPage = 1;
-  beersListLimit = 20;
+  beersListLimit = 5;
 
   constructor(private punkService: PunkService) { }
 

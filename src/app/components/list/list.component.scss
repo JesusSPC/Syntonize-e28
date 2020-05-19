@@ -54,14 +54,21 @@
     padding-bottom: 1rem;
     background-color: $brand-2;
 
-    & * {
+    & li {
       padding-right: 1rem;
       padding-left: 1rem;
-      color: $brand-5;
-    }
-
-    & p {
       cursor: pointer;
+      border-right: 1px solid $brand-4;
+      color: $brand-5;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &:hover {
+        background-color: $brand-3;
+        transition: background-color 0.1s ease-in-out;
+      }
     }
   }
 }

@@ -6,8 +6,8 @@
   </div>
 
   <div class="list-controls">
-    <p (click)="previousPage()"><< {{ 'Back' | uppercase }}</p>
-    <span> | </span>
-    <p (click)="nextPage()">{{ 'Next' | uppercase }} >></p>
+    <li *ngFor="let page of listPagination" (click)="changeList?.emit(page)">
+      <p>{{page}}</p>
+    </li>
   </div>
 </div>

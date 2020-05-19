@@ -1,5 +1,5 @@
 <div class="page-container">
-  <e-list [listPage]="beersListPage" [listLimit]="beersListLimit" (changeList)="setBeersList($event)">
+  <e-list [listPagination]="beersPagination" [listPage]="beersListPage" [listLimit]="beersListLimit" (changeList)="setBeersList($event)">
     <li #listItem *ngFor="let beer of beers$ | async">
       <div class="list-data">
         <span>{{beer?.id}} </span>
