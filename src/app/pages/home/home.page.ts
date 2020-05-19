@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class HomePage implements OnInit {
   beers$: Observable<any>;
   currentBeers$: Observable<any>;
-  beersPagination: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  beersPagination: number[] = [];
   beersListPage = 1;
   beersListLimit = 7;
 
