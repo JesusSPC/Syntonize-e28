@@ -13,13 +13,22 @@ export class HomePage implements OnInit {
   currentBeers$: Observable<any>;
   beersPagination: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   beersListPage = 1;
-  beersListLimit = 5;
+  beersListLimit = 7;
 
   constructor(private punkService: PunkService) { }
 
   ngOnInit(): void {
     this.beers$ = this.punkService.getAllBeers(this.beersListPage, 80);
+    this.setPagination();
     this.changeList(1);
+  }
+
+  setPagination() {
+    this.beers$.subscribe(observer => {
+      const dataLength = observer.length;
+      const pages = Math.ceil(dataLength / this.beersListLimit);
+      this.beersPagination = Array.from(Array(pages), (x, idx) => idx + 1);
+    });
   }
 
   changeList(listNumber) {

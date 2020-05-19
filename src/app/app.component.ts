@@ -35,6 +35,7 @@ export class AppComponent  {
   goToLink(link, idx?) {
     if (!link.submenu || link.submenu.length === 0) {
       this.toggleMenu(idx);
+      this.toggleSidebar();
       this.router.navigate([`${link.path}`], {relativeTo: this.route});
     }
     if (link.submenu && link.submenu.length > 0) {
