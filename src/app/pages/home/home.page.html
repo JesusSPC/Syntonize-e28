@@ -1,8 +1,11 @@
 <div class="page-container">
   <e-list [listPage]="beersListPage" [listLimit]="beersListLimit" (changeList)="setBeersList($event)">
     <li #listItem *ngFor="let beer of beers$ | async">
-      <span>{{beer?.id}} </span>
-      <a>{{beer?.name}}</a>
+      <div class="list-data">
+        <span>{{beer?.id}} </span>
+        <p>{{beer?.name}}</p>
+      </div>
+      <img [src]="beer?.image_url" [alt]="beer?.name+' image'">
     </li>
   </e-list>
 </div>

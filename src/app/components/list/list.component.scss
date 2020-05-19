@@ -1,21 +1,47 @@
+@import "src/theme/mixins";
+
 .list {
   width: 60%;
   margin: 0 auto;
-  padding: 1rem;
-  border: 1px solid black;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 10px 0px $brand-2;
+  background-color: $brand-5;
 
 
   &-table {
-    padding-bottom: 5rem;
-    padding-left: 10%;
-    padding-right: 10%;
 
     & ::ng-deep {
-      & li {
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         font-size: 1.5rem;
-        padding: 0.5rem;
-        border-bottom: 1px solid black;
+        padding: 1rem 8%;
+        border-bottom: 1px solid #bfc0c0;
         cursor: pointer;
+
+        &:first-child {
+          border-top-left-radius: 1rem;
+          border-top-right-radius: 1rem;
+        }
+
+        &:hover {
+          background-color: $brand-3;
+          transition: background-color 0.3s ease-in-out;
+
+          .list-data {
+            color: $brand-5;
+            transition: color 0.3s ease-in-out;
+          }
+        }
+
+        img {
+          height: 8rem;
+        }
+
+        .list-data {
+
+        }
       }
     }
   }
@@ -24,10 +50,14 @@
     display: flex;
     justify-content: center;
     font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: $brand-2;
 
     & * {
       padding-right: 1rem;
       padding-left: 1rem;
+      color: $brand-5;
     }
 
     & p {
