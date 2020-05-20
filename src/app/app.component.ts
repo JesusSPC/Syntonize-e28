@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as data from 'src/data/menu-links.json';
-import { MenuLink } from './interfaces/menu-link';
+import { MenuLink } from './interfaces/menu-link.interface';
 
 @Component({
   selector: 'app-root',

@@ -1,18 +1,14 @@
-<div>{{(beers$ | async)?.length}}</div>
 <div class="page-container">
   <e-list
-    [listPagination]="pagination?.totalPages"
-
-    (changeList)="pagination?.changePage($event)">
-    <li #listItem *ngFor="let beer of currentBeers$ | async">
+    *ngIf="(currentBeers$ | async)?.length > 0"
+    [listPagination]="pagination.totalPages"
+    (changeList)="pagination.changePage($event)">
+    <li *ngFor="let beer of currentBeers$ | async">
       <div class="list-data">
         <span>{{beer?.id}} </span>
         <p>{{beer?.name}}</p>
       </div>
-      <img [src]="beer?.image_url" [alt]="beer?.name+' image'">
+      <img [src]="beer.image_url" [alt]="beer.name+' image'">
     </li>
   </e-list>
 </div>
-
-<!-- [listPage]="beersListPage"
-[listLimit]="beersListLimit" -->
